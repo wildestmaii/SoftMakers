@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn, ManyToOne } from "typeorm";
 import { ProgressoTrilha } from "./ProgressoTrilha";
 import { IndicacaoTrilha } from "./IndicacaoTrilha";
 import { MetaUsuario } from "./MetaUsuario";
@@ -27,15 +27,15 @@ export class Usuario {
     @Column('varchar', {length: 300, nullable: true})
     experiencia: string;
 
-    @OneToMany(() => ProgressoTrilha, ProgressoTrilha => ProgressoTrilha.aula_id)
-    @JoinColumn({name: "usuario_id"})
+    @OneToMany(() => ProgressoTrilha, ProgressoTrilha => ProgressoTrilha.modulo_trilha_id)
+    //@JoinColumn({name: "usuario_id"})
     progressos: ProgressoTrilha[];
 
     @OneToMany(() => MetaUsuario, MetaUsuario => MetaUsuario.meta)
-    @JoinColumn({name: "usuario_id"})
+    //@JoinColumn({name: "usuario_id"})
     meta: MetaUsuario[];
 
-    @OneToMany(() => IndicacaoTrilha, IndicacaoTrilha => IndicacaoTrilha.trilha_id)
+    @ManyToOne(() => IndicacaoTrilha, IndicacaoTrilha => IndicacaoTrilha.trilha_id)
     @JoinColumn({name: "usuario_id"})
     indicacao_trilha: IndicacaoTrilha[];
 

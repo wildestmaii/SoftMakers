@@ -1,10 +1,10 @@
-import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
+import { Column, Entity, OneToMany } from "typeorm";
 import { Gerenciador } from "./Gerenciador";
 import { Usuario } from "./Usuario";
 
 @Entity('avaliacao')
 export class Avaliacao {
-    @PrimaryColumn()
+    @Column()
     usuario_id: number;
 
     @Column()

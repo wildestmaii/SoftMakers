@@ -1,4 +1,4 @@
-import { Entity, ManyToOne, PrimaryColumn } from "typeorm";
+import { Entity, OneToMany, PrimaryColumn } from "typeorm";
 import { Trilha } from "./Trilha";
 import { Usuario } from "./Usuario";
 
@@ -9,12 +9,11 @@ export class IndicacaoTrilha {
     
     @PrimaryColumn()
     usuario_id: number;
-    
-    @ManyToOne(() => Trilha, Trilha => Trilha.id)
+    //
+    @OneToMany(() => Trilha, Trilha => Trilha.id)
     trilha: Trilha[];
-    
-    @ManyToOne(() => Usuario, Usuario => Usuario.id)
+    //
+    @OneToMany(() => Usuario, Usuario => Usuario.id)
     usuario: Usuario[];
-
 
 }

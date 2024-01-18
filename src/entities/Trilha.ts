@@ -1,5 +1,5 @@
-import { Entity, Column, OneToMany, PrimaryGeneratedColumn, JoinColumn } from "typeorm";
-import { Modulos } from "./Modulos";
+import { Entity, Column, OneToMany, PrimaryGeneratedColumn, JoinColumn, ManyToOne } from "typeorm";
+import { Modulo } from "./Modulo";
 import { IndicacaoTrilha } from "./IndicacaoTrilha";
 
 @Entity('trilha')
@@ -13,11 +13,12 @@ export class Trilha {
   @Column('json')
   descricao: object;
 
-  @OneToMany(() => Modulos, Modulos => Modulos.modulo_id)
-  @JoinColumn({name: 'modulo_id'})
-  modulos: Modulos[];
+  @OneToMany(() => Modulo, Modulo => Modulo.id)
+  modulo: Modulo[];
 
-  @OneToMany(() => IndicacaoTrilha, IndicacaoTrilha => IndicacaoTrilha.usuario_id)
-  @JoinColumn({name: 'usuario_id'})
+  @ManyToOne(() => IndicacaoTrilha, IndicacaoTrilha => IndicacaoTrilha.usuario_id)
+  //@JoinColumn({name: 'usuario_id'})
   indicacao: IndicacaoTrilha[];
+
+
 }
