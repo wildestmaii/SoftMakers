@@ -6,7 +6,7 @@ export class AvaliacaoController {
     const { usuario_id, gerenciador_id, dados, tipo_relatorio } = req.body;
 
     if (!dados) {
-      res.status(400).json({ message: 'informe os dados!' });
+      res.status(400).json({ message: 'preencha os dados!' });
     }
 
     try {
