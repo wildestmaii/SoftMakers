@@ -14,27 +14,23 @@ routes.post('/avaliacao', new AvaliacaoController().create);
 
 routes.post('/gerenciador', new GerenciadorController().create);
 
-routes.post('/indicacaoTrilha', new IndicacaoTrilhaController().create);
+//routes.post('/indicacaoTrilha', new IndicacaoTrilhaController().create);
 
-routes.post('/metaUsuario', new MetaUsuarioController().create);
+//routes.post('/metaUsuario', new MetaUsuarioController().create);
 
-routes.post('/modulo', new ModuloController().create);
+//routes.post('/modulo', new ModuloController().create);
 
-routes.post('/progressoTrilha', new ProgressoTrilhaController().create);
+//routes.post('/progressoTrilha', new ProgressoTrilhaController().create);
 
-routes.post('/trilha', new TrilhaController().create);
+//routes.post('/trilha', new TrilhaController().create);
 
-routes.post('/usuario', new UsuarioController().create);
+//routes.post('/usuario', new UsuarioController().create);
 
 
 //GET
-routes.get('/users')
-
 routes.get('/gerenciador')
 
 routes.get('/aula')
-
-routes.get('/aulas')
 
 routes .get('/avaliacao')
 
@@ -44,8 +40,6 @@ routes.get('/metaUsuario')
 
 routes.get('/modulo')
 
-routes.get('/modulos')
-
 routes.get('/progressoTrilha')
 
 routes.get('/trilha')
@@ -53,17 +47,13 @@ routes.get('/trilha')
 
 
 //PUT
-routes.put('/usuarios/:id')
+routes.put('/usuarios')
 
 
 
 
 //DELETE
-routes.delete('/users/:id')
-
-
-
-
+routes.delete('/usuarios')
 
 
 
